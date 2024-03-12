@@ -1,0 +1,43 @@
+{% extends "/layout/layout_management.twig" %}
+
+{% block content %}
+
+<div
+    class="flex flex-col justify-center align-middle items-start space-y-9 w-96 h-fit p-6
+        border border-stone-300 rounded-md bg-white shadow-sm">
+
+    <h1 class="font-bold text-xl text-stone-900">Upload a Video</h1>
+
+    <form
+        hx-encoding='multipart/form-data'
+        hx-post='/content/upload'
+        _='on htmx:xhr:progress(loaded, total) set #progress.value to (loaded/total)*100'
+        class="flex flex-col justify-center align-middle items-start space-y-3 w-full h-fit">
+
+        <div>
+
+            <input type='file' name='file'>
+        </div>
+
+        <div>
+            <button
+                class="flex flex-row justify-between align-middle items-center space-x-3 px-3 py-1.5
+                    border-none rounded-md bg-blue-500 hover:bg-blue-700
+                    text-white">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 256 256"><path d="M168,80H88l40-40Z" opacity="0.2"></path><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0ZM80.61,83.06a8,8,0,0,1,1.73-8.72l40-40a8,8,0,0,1,11.32,0l40,40A8,8,0,0,1,168,88H136v64a8,8,0,0,1-16,0V88H88A8,8,0,0,1,80.61,83.06ZM107.31,72h41.38L128,51.31Z"></path></svg>
+                <p>Upload</p>
+            </button>
+        </div>
+        
+        <div>
+            <progress
+                id='progress'
+                value='0'
+                max='100'>
+            </progress>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

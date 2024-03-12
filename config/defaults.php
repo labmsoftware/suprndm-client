@@ -43,7 +43,7 @@ $settings['twig'] = [
     'auto_reload' => true,
     'templates' => __DIR__ . '/../templates',
     'partials' => [
-        'content' => '/display/content.twig'
+        'content' => '/content/view.twig'
     ]
 ];
 
