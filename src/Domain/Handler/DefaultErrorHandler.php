@@ -99,14 +99,28 @@ final class DefaultErrorHandler
             // so the base path to the project root folder is required to load assets
             $phpRendererAttributes['basePath'] = (new BasePathDetector($request->getServerParams()))->getBasePath();
 
+            $data['client'] = [
+                'name' => 'friendlyNameStub',
+                'hostname' => 'hostnameStub',
+                'ipaddr' => 'ipAddressStub',
+                'lastcheckin' => 'lastCheckInStub'
+            ];
+
             // Render template if the template path fails, the default webserver exception is shown
-            return $this->twig->render($response, 'error/error-details.twig', $phpRendererAttributes);
+            return $this->twig->render($response, '/error/error-details.twig', $data);
         }
 
         // Display generic error page
         // If it's a HttpException it's safe to show the error message to the user
         $exceptionMessage = $exception instanceof HttpException ? $exception->getMessage() : null;
         $phpRendererAttributes['exceptionMessage'] = $exceptionMessage;
+
+        $phpRendererAttributes['client'] = [
+                'name' => 'friendlyNameStub',
+                'hostname' => 'hostnameStub',
+                'ipaddr' => 'ipAddressStub',
+                'lastcheckin' => 'lastCheckInStub'
+        ];
 
         // Render template
         return $this->twig->render($response, 'error/error-page.twig', $phpRendererAttributes);

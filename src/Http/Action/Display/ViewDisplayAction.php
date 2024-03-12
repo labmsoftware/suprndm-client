@@ -17,6 +17,6 @@ final class ViewDisplayAction extends Action
 
     public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return $this->renderer->render($response, '/display/display.twig');
+        return $this->renderer->render($response, '/display/displa.twig');
     }
 }

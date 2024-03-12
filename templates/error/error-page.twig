@@ -8,17 +8,44 @@
     <!-- Tailwind Stylesheet -->
     <link rel="stylesheet" href="/css/app.css">
 
-    <title>{{ page.title }}</title>
+    <title>errorpage</title>
 </head>
 <body
-    class="flex flex-row justify-center align-middle items-center min-h-screen w-full
-        bg-stone-100">
+    class="flex flex-col justify-center align-middle items-center w-full h-dvh
+        bg-blue-500">
 
-    <div>
-        <h1>Something isn't right.</h1>
-        <p>
-            SuprNDM should be back soon!
+    <div
+        class="flex flex-grow flex-col justify-center align-middle items-start space-y-6 w-full p-9">
+    
+        <h1 class="font-bold text-6xl text-white">:(</h1>
+        <h2 class="font-semibold text-3xl text-white">Something's gone a bit wrong</h2>
+
+        <p
+            class="text-lg text-white">
+        
+            Turning me off and on again might fix the issue, but if it doesn't, the information below might help:
         </p>
+
+        <div class="h-6"></div>
+
+        <ul class="font-mono text-md text-white">
+            <li>Client Name: {{ client.name }}</li>
+            <li>Client Hostname: {{ client.hostname }}</li>
+            <li>Client IP Address: {{ client.ipaddr }}</li>
+            <li>Client Last Check-In: {{ client.lastcheckin }}</li>
+        </ul>
+    </div>
+    
+    <div
+        class="flex flex-row justify-between align-middle items-center w-full h-fit p-9">
+
+        <div
+            class="flex flex-row justify-center align-middle items-center space-x-3">
+        
+            <h1 class="font-semibold text-lg text-white">SuprNDM Client</h1>
+        </div>
+
+        <img src="/assets/dsat_logo_white.png" class="w-24">
     </div>
 </body>
 </html>
