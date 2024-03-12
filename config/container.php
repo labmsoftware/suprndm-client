@@ -108,15 +108,14 @@ return [
         ]);
 
         return $twig;
-
     },
 
     TwigRenderer::class => function(ContainerInterface $container) {
-        $partialsWhitelist = [];
+        $settings = ($container->get(Settings::class))->get('twig');
 
         return new TwigRenderer(
             $container->get(Twig::class),
-            $partialsWhitelist
+            $settings['partials']
         );
     },
 

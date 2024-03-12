@@ -1,28 +1,18 @@
 {% include "/layout/head.twig" %}
 
 <body
-    class="flex flex-col justify-center align-middle items-center w-full h-dvh
+    class="flex flex-col justify-center align-middle items-center w-full h-screen overflow-hidden
         bg-black">
 
     <div
-        class="flex flex-grow flex-col justify-center align-middle items-center w-full">
-    
-        <h1 class="text-xl text-white">waiting for content</h1>
+        hx-get="/display/content"
+        hx-swap="innerHTML"
+        hx-trigger="load settle:1s"
+        class="flex flex-col justify-center align-middle items-center w-full h-full
+                bg-black">
+
+        {% block content %}{% endblock %}
     </div>
-    
-    <div
-        class="flex flex-row justify-between align-middle items-center w-full h-fit p-9">
-
-        <div
-            class="flex flex-row justify-center align-middle items-center space-x-3">
-        
-            <h1 class="font-semibold text-lg text-white">SuprNDM Client</h1>
-        </div>
-
-        <img src="/assets/dsat_logo_white.png" class="w-24">
-    </div>
-
-    {% block content %}{% endblock %}
 </body>
 
 {% include "/layout/tail.twig" %}

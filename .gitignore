@@ -8,6 +8,10 @@
 /var/cache/*
 !/var/cache/.gitkeep
 
+# Local content store
+/public/content/*
+!/public/content/.gitkeep
+
 # Managed by Composer
 /vendor/
 /composer.lock

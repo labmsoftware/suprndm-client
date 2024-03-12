@@ -1,12 +1,22 @@
 {% extends "/layout/layout.twig" %}
 
 {% block content %}
-
 <div
-    id="content"
-    class="absolute top-0 left-0 z-50 w-full h-dvh
-        bg-stone-100">
-
+    class="flex flex-grow flex-col justify-center align-middle items-start space-y-6 w-full p-9">
+    
+    <h1 class="font-bold text-6xl text-white">No content</h1>
+    <h2 class="text-2xl text-white">Make sure the client is connected to a display control server</h2>
 </div>
+    
+<div
+    class="flex flex-row justify-between align-middle items-center w-full h-fit p-9">
 
+    <div
+        class="flex flex-row justify-center align-middle items-center space-x-3">
+        
+        <h1 class="font-semibold text-lg text-white">SuprNDM Client</h1>
+    </div>
+
+    <img src="/assets/dsat_logo_white.png" class="w-24">
+</div>
 {% endblock %}

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Action\Display;
+namespace App\Http\Action\Content;
 
 use App\Http\Action\Action;
 use App\Http\Renderer\TwigRenderer;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-final class ViewDisplayAction extends Action
+final class GetContentAction extends Action
 {
     public function __construct(
         protected TwigRenderer $renderer
@@ -17,6 +17,6 @@ final class ViewDisplayAction extends Action
 
     public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return $this->renderer->render($response, '/display/display.twig');
+        return $this->renderer->renderPartial($response, 'content');
     }
 }

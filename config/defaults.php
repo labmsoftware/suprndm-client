@@ -41,7 +41,10 @@ $settings['twig'] = [
     'debug' => $_ENV['APP_DEBUG'] ?? true,
     'cache' => __DIR__ . '/../var/cache/twig',
     'auto_reload' => true,
-    'templates' => __DIR__ . '/../templates'
+    'templates' => __DIR__ . '/../templates',
+    'partials' => [
+        'content' => '/display/content.twig'
+    ]
 ];
 
 $settings['public'] = [
@@ -70,7 +73,7 @@ $settings['security'] = [
 
 // Session config
 $settings['session'] = [
-    'name' => 'suprboard-app',
+    'name' => 'suprndm-client',
     'lifetime' => 7200,
     'path' => null,
     'domain' => $_ENV['APP_URL'],
@@ -79,23 +82,6 @@ $settings['session'] = [
     'cache_limiter' => 'nocache',
     'cookie_samesite' => 'Lax',
     'cookie_secure' => false
-];
-
-// Secret values are overwritten in env.php
-$settings['database'] = [
-    'dev_mode' => true,
-    'cache_dir' => __DIR__ . '/../var/cache/doctrine',
-    'entity_dirs' => [
-        __DIR__ . '/../src/Domain/Entity'
-    ],
-    'connection' => [
-        'driver' => $_ENV['DB_CONNECTION'],
-        'host' => $_ENV['DB_HOST'],
-        'port' => $_ENV['DB_PORT'],
-        'dbname' => $_ENV['DB_DATABASE'],
-        'user' => $_ENV['DB_USERNAME'],
-        'password' => $_ENV['DB_PASSWORD']
-    ]
 ];
 
 $settings['logger'] = [

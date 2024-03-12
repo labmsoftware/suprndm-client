@@ -102,7 +102,7 @@ final class DefaultErrorHandler
             $data['client'] = [
                 'name' => 'friendlyNameStub',
                 'hostname' => 'hostnameStub',
-                'ipaddr' => 'ipAddressStub',
+                'ipaddr' => $_SERVER['SERVER_ADDR'],
                 'lastcheckin' => 'lastCheckInStub'
             ];
 
@@ -116,10 +116,11 @@ final class DefaultErrorHandler
         $phpRendererAttributes['exceptionMessage'] = $exceptionMessage;
 
         $phpRendererAttributes['client'] = [
-                'name' => 'friendlyNameStub',
-                'hostname' => 'hostnameStub',
-                'ipaddr' => 'ipAddressStub',
-                'lastcheckin' => 'lastCheckInStub'
+                'name' => $_ENV['CLIENT_LOCAL_NAME'] ?? 'Unknown',
+                'hostname' => gethostname(),
+                'ipaddr' => $_ENV['CLIENT_IP'] ?? 'Unknown',
+                'lastcheckin' => 'lastCheckInStub',
+                'version' => $_ENV['APP_VERSION']
         ];
 
         // Render template
