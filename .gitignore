@@ -1,0 +1,17 @@
+# Environment configuration files
+/config/env/*
+!/config/env/example.env
+
+# Log and cache storage
+/var/log/*
+!/var/log/.gitkeep
+/var/cache/*
+!/var/cache/.gitkeep
+
+# Managed by Composer
+/vendor/
+/composer.lock
+
+# Managed by NPM
+/node_modules/
+/package-lock.json

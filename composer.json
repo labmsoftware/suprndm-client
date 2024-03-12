@@ -1,0 +1,42 @@
+{
+    "name": "labmsoftware/suprndm-client",
+    "description": "Network display client written in PHP",
+    "type": "project",
+    "license": "MIT",
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LABMSOFTWARE",
+            "email": "labmsoftware@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "fig/http-message-util": "^1.1",
+        "monolog/monolog": "^3.5",
+        "nyholm/psr7": "^1.8",
+        "nyholm/psr7-server": "^1.1",
+        "odan/session": "^6.1",
+        "php-di/slim-bridge": "^3.4",
+        "selective/basepath": "^2.2",
+        "slim/slim": "4.*",
+        "slim/twig-view": "^3.3",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public",
+        "run-tailwind": "npx tailwindcss -i ./config/tailwindcss/input.css -o ./public/css/app.css --watch"
+    }
+}
