@@ -9,8 +9,8 @@
 !/var/cache/.gitkeep
 
 # Local content store
-/public/content/*
-!/public/content/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
 
 # Managed by Composer
 /vendor/

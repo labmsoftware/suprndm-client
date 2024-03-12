@@ -6,6 +6,8 @@ declare(strict_types = 1);
 error_reporting(E_ALL);
 ini_set('display_errors', '0');
 ini_set('display_startup_errors', '0');
+ini_set('upload_max_filesize', '2000M');
+ini_set('post_max_filesize', '2000M');
 
 // Timezone - time() is timezone independent https://stackoverflow.com/a/36390811/9013718
 date_default_timezone_set('Europe/London');
@@ -28,6 +30,7 @@ $settings['dev'] = $_ENV['APP_ENV'] ?? true;
 
 // Project root dir (1 parent)
 $settings['root_dir'] = dirname(__DIR__, 1);
+define('ROOT_DIR', dirname(__DIR__, 1));
 
 $settings['deployment'] = [
     'version' => $_ENV['APP_VERSION'],

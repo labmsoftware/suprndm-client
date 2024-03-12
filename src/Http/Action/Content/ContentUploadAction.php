@@ -29,22 +29,17 @@ final class ContentUploadAction extends Action
             die("The file is empty.");
         }
         
-        if ($fileSize > 3145728) { // 3 MB (1 byte * 1024 * 1024 * 3 (for 3 MB))
-            die("The file is too large");
-        }
-        
         $allowedTypes = [
-           'image/png' => 'png',
-           'image/jpeg' => 'jpg'
+           'video/mp4' => 'mp4',
         ];
         
         if (!in_array($filetype, array_keys($allowedTypes))) {
             die("File not allowed.");
         }
         
-        $filename = basename($filepath); // I'm using the original name here, but you can also change the name of the file here
+        $filename = 'target';
         $extension = $allowedTypes[$filetype];
-        $targetDirectory = __DIR__ . "/public/uploads"; // __DIR__ is the directory of the current PHP file
+        $targetDirectory = ROOT_DIR . "/public/uploads"; // __DIR__ is the directory of the current PHP file
         
         $newFilepath = $targetDirectory . "/" . $filename . "." . $extension;
         

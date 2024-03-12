@@ -11,7 +11,7 @@ use App\Http\Action\Content\ViewContentUploadAction;
 
 return function(App $app) {
     
-    $app->get('', ViewDisplayAction::class);
+    $app->get('/', ViewDisplayAction::class);
 
     $app->group('/content', function(RouteCollectorProxy $content) {
         $content->get('/view', GetContentAction::class);
