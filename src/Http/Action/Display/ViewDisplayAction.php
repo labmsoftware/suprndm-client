@@ -20,7 +20,7 @@ final class ViewDisplayAction extends Action
         $data = [
             'client' => [
                 'name' => $_ENV['CLIENT_LOCAL_NAME'],
-                'ipAddress' => '10.58.64.100'
+                'ipAddress' => $_ENV['CLIENT_IP']
             ]
         ];
 
