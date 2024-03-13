@@ -1,7 +1,18 @@
-<video
-    src="/content/target.mp4"
-    class="h-full"
-    autoplay
-    loop
-    muted>
-</video>
+<div
+    class="flex flex-col justify-center align-middle items-center w-full h-full"
+    hx-sse="connect:/content/status">
+
+    <div
+        class="h-full w-full"
+        hx-trigger="sse:new_content"
+        hx-get="/content/view">
+
+        <video
+            src="/uploads/target.mp4"
+            class="h-full"
+            autoplay
+            loop
+            muted>
+        </video>
+    </div>
+</div>

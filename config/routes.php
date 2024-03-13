@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Action\Content\ContentStatusAction;
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
 use App\Http\Action\Content\GetContentAction;
@@ -16,6 +17,7 @@ return function(App $app) {
     $app->group('/content', function(RouteCollectorProxy $content) {
         $content->get('/view', GetContentAction::class);
         $content->get('/upload', ViewContentUploadAction::class);
+        $content->get('/status', ContentStatusAction::class);
 
         $content->post('/upload', ContentUploadAction::class);
     });
