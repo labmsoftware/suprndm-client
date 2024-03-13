@@ -8,6 +8,7 @@ use App\Http\Action\Content\ContentStatusAction;
 use App\Http\Action\Content\ContentUploadAction;
 use App\Http\Action\Manage\ViewQuickActionsAction;
 use App\Http\Action\Content\ViewContentUploadAction;
+use App\Http\Action\Manage\RebootServerAction;
 
 // TODO: Add CORS middleware to protect routes
 
@@ -25,5 +26,6 @@ return function(App $app) {
 
     $app->group('/manage', function(RouteCollectorProxy $manage) {
         $manage->get('/actions', ViewQuickActionsAction::class);
+        $manage->get('/reboot', RebootServerAction::class);
     });
 };
