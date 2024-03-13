@@ -1,0 +1,12 @@
+{% include "/layout/head.twig" %}
+
+<body
+    class="w-full h-screen overflow-hidden
+        bg-black">
+
+    {% block underlay %}{% endblock %}
+
+    {% block overlay %}{% endblock %}
+</body>
+
+{% include "/layout/tail.twig" %}

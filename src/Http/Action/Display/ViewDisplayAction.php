@@ -17,6 +17,13 @@ final class ViewDisplayAction extends Action
 
     public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
-        return $this->renderer->render($response, '/display/display.twig');
+        $data = [
+            'client' => [
+                'name' => $_ENV['CLIENT_LOCAL_NAME'],
+                'ipAddress' => '10.58.64.100'
+            ]
+        ];
+
+        return $this->renderer->render($response, '/display/canvas.twig', $data);
     }
 }

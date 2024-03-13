@@ -15,6 +15,17 @@ final class ContentStatusAction extends Action
         
     }
 
+    /**
+     * Send status updates via SSE to clients
+     * 
+     * !! Does not work, needs fixing
+     *
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param array $args
+     * 
+     * @return ResponseInterface
+     */
     public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         return $response->withBody(new NonBufferedBody())
